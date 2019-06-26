@@ -14,6 +14,10 @@ app.get('/*shipping', (request, response) => {
     .catch(error => {
       response.status(500).send({ error: error.message })
     })
-})
+});
+
+app.get("/",(request, response)=>{
+  return response.send("Hello from the other side!");
+});
 let PORT = process.env.PORT || 3001;
 app.listen(PORT, () => console.log(`ShippingService is listening on port ${PORT}`))
